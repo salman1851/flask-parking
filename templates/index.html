@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Parking Occupancy Monitor</h2>
+
+<form method="POST" action="{{ url_for('main.address_post') }}">
+  <input type="text" id="new_address" name="new_address" value=""> <input type="submit" value="Enter camera address">
+</form>
+
+<br>
+<form action="{{ url_for('main.mark_spots') }}">
+  <input type="submit" value="Mark parking spots">
+</form>
+
+<br>
+<form action="{{ url_for('main.view_available_spots') }}">
+  <input type="submit" value="View available spots">
+</form>
+
+</body>
+</html>

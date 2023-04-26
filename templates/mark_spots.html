@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parking Spots</title>
+</head>
+<body>
+    <img id="myImg" src="static/parking_sample_snap_poly.png" width="800" height="450" />
+    <div id="coordinates" style="position:absolute; bottom:0px;"></div> 
+    <br>
+    <form action="{{ url_for('main.index') }}" style="display: inline-block;"><input type="submit" value="Home"></form>
+    <button type="button" onclick="getCoords()">Mark parking spot</button>
+    <button type="button" onclick="saveCoords()">Save parking spot</button>
+    <form action="{{ url_for('main.delete_last_coordinate') }}" style="display: inline-block;"><input type="submit" value="Delete last coordinate"></form>
+    <form action="{{ url_for('main.delete_coordinates') }}" style="display: inline-block;"><input type="submit" value="Delete all coordinates"></form>
+    <script>
+        let coordArray = [];
+        function getCoords(){
+            var img = document.getElementById("myImg");
+            img.onclick = function(event) {
+                var x = event.offsetX;
+                var y = event.offsetY;
+                document.getElementById("coordinates").innerHTML += "X:" + x + " Y:" + y + "<br>";
+                coordArray.push([x, y]);
+            };
+        }
+        function saveCoords(){
+            let text = "";
+            for (let i = 0; i < coordArray.length; i++){
+                text += coordArray[i][0] + "," + coordArray[i][1] + "\n";
+            }
+            // Create a new form
+            var form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/save_coordinates/';
+            // Create an input element
+            var input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'coordinates';
+            input.value = text;
+            // Append the input element to the form
+            form.appendChild(input);
+            // Append the form to the document
+            document.body.appendChild(form);
+            // Submit the form
+            form.submit();
+            document.getElementById("coordinates").innerHTML = "";
+            document.getElementById("saveButton").addEventListener("click", function(){form.submit();});
+        }
+    </script>
+</body>
+</html>
+
+<!--
+image path: "static/parking_sample_snap.png"
+-->
+
+
+
+
+
+
+

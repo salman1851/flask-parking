@@ -1,0 +1,15 @@
+1 free
+2 free
+3 occupied
+4 free
+5 occupied
+6 occupied
+7 occupied
+8 occupied
+9 free
+10 occupied
+11 occupied
+12 occupied
+13 occupied
+14 free
+15 occupied
