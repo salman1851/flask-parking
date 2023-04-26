@@ -12,4 +12,5 @@ Follow these steps to run the web application:
 3. Run the application: "flask run".
 
 Demo:
-![image](https://user-images.githubusercontent.com/131760691/234493826-6c50a6df-b3a0-4c7a-a1c5-449bff0e2c03.png)
+
+![image](https://user-images.githubusercontent.com/131760691/234494176-be4a4389-5dcd-41a8-956d-70d50f35bbb2.png)
