@@ -10,3 +10,6 @@ Follow these steps to run the web application:
 1. Navigate to the directory one step above the root folder "flask_parking".
 2. Set the Flask application variable: "export FLASK_APP=flask_parking".
 3. Run the application: "flask run".
+
+Demo
+![image](https://user-images.githubusercontent.com/131760691/234493626-8cc74acc-17e5-4a42-939a-4595c150e54b.png)
